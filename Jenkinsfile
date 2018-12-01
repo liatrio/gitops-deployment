@@ -1,15 +1,15 @@
 pipeline {
     agent none
     node {
-        def manfiest = readJSON file: 'manifest.json'
+        manfiest = readJSON file: 'manifest.json'
     }
     stages {
         stage('Deploy to Dev') {
             when {
-                branch 'dev' 
+                branch 'dev'
             }
             steps {
-                echo 'Deploying to Dev'
+                echo 'Deploying to Dev ${manifest.manifest-version}'
             }
         }
         stage('Deploy to Staging') {
