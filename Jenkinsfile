@@ -1,6 +1,6 @@
 pipeline {
     agent none
-    node {
+    environment {
         manfiest = readJSON file: 'manifest.json'
     }
     stages {
