@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-      def manifest = readJSON file: 'manifest.json'
+      manifest = readJSON file: 'manifest.json'
     }
     stages {
         stage('Deploy to Dev') {
@@ -9,7 +9,7 @@ pipeline {
                 branch 'dev'
             }
             steps {
-                echo "Deploying ${manifest['manifest-version']} to Dev"
+                echo "Deploying ${manifest.manifest-version} to Dev"
             }
         }
         stage('Deploy to Staging') {
