@@ -9,7 +9,7 @@ pipeline {
                 branch 'dev'
             }
             steps {
-                echo 'Deploying to Dev ${manifest.manifest-version}'
+                echo "Deploying to Dev ${manifest.manifest-version}"
             }
         }
         stage('Deploy to Staging') {
