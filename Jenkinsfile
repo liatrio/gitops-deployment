@@ -1,6 +1,8 @@
 pipeline {
     agent none
-    def manfiest = readJSON file: 'manifest.json'
+    node {
+        def manfiest = readJSON file: 'manifest.json'
+    }
     stages {
         stage('Deploy to Dev') {
             when {
