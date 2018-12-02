@@ -1,8 +1,10 @@
 
 pipeline {
-    agent any
-    node {
-        manifest = readJSON file: 'manifest.json'
+    agent {
+        any
+        node {
+            manifest = readJSON file: 'manifest.json'
+        }
     }
     stages {
         stage('Deploy to Dev') {
