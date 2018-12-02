@@ -1,15 +1,16 @@
+def manifest
 pipeline {
     agent any
-    environment {
-        Map manifest = readJSON file: 'manifest.json'
-    }
     stages {
         stage('Deploy to Dev') {
             when {
                 branch 'dev'
             }
             steps {
-                echo "Deploying ${manifest.manifest-version} to Dev"
+                script {
+                    manifest = readJSON file: 'manifest.json'
+                    echo "Deploying ${manifest.manifest_version} to Dev environment ${manifest.environments.dev.host}"
+                }
             }
         }
         stage('Deploy to Staging') {
@@ -17,7 +18,10 @@ pipeline {
                 branch 'staging' 
             }
             steps {
-                echo 'Deploying to Staging'
+                script {
+                    manifest = readJSON file: 'manifest.json'
+                    echo "Deploying ${manifest.manifest_version} to Staging environment ${manifest.environments.staging.host}"
+                }
             }
         }
         stage('Deploy to Production') {
@@ -25,7 +29,10 @@ pipeline {
                 branch 'production' 
             }
             steps {
-                echo 'Deploying to Production'
+                script {
+                    manifest = readJSON file: 'manifest.json'
+                    echo "Deploying ${manifest.manifest_version} to Production environment ${manifest.environments.production.host}"
+                }
             }
         }
         stage('Run Automated Tests') {
