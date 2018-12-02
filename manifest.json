@@ -1,0 +1,22 @@
+{
+    "manifest_version": "1.0.0",
+    "description": "This is a manifest to illustrate a potential GitOps approach to deployment for any application",
+    "app_version": "my-website-1.0.0.zip",
+    "environments": {
+        "dev": { 
+            "host": "DEV_IP",
+            "deployment_path": "/dev/path/to/application",
+            "healthcheck_url": "bttp://URL_to_healthcheck_the_Dev_environment"
+        },
+        "staging": { 
+            "host": "STAGING_IP",
+            "deployment_path": "/staging/path/to/application",
+            "healthcheck_url": "bttp://URL_to_healthcheck_the_Staging_environment"
+        },
+        "production": { 
+            "host": "PRODUCTION_IP",
+            "deployment_path": "/prod/path/to/application",
+            "healthcheck_url": "bttp://URL_to_healthcheck_the_Production_environment"
+        }
+    }
+  }
