@@ -1,8 +1,8 @@
 
 pipeline {
+    def  manifest = readJSON file: 'manifest.json'
     agent {
         any
-        def  manifest = readJSON file: 'manifest.json'
     }
     stages {
         stage('Deploy to Dev') {
