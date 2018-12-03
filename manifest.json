@@ -1,7 +1,7 @@
 {
-    "manifest_version": "1.0.0",
+    "manifest_version": "1.1.0",
     "description": "This is a manifest to illustrate a potential GitOps approach to deployment for any application",
-    "app_version": "my-website-1.0.0.zip",
+    "app_version": "my-website-1.1.0.zip",
     "environments": {
         "dev": { 
             "host": "DEV_IP",
