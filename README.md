@@ -42,7 +42,10 @@ I have chosen to use a Jenkinsfile (declarative Jenkins pipeline) to illustrate 
 2. Assign reviewers to help validate the correct application version in the manifest or any other changes that need review.
 3. Depending on your process, you can merge into the environment yourself after approvals or allow others the honor of merging into target environments.
     * Merge restrictions come into play in an enterprise environment where you may wish to assign certain team members the ability to deploy to some environments but not others. You can lock down merge capabilities to some environments and require certain reviewers in others. ![repo restrictions](/resources/branch_restrictions.png)
-4. Upon PR merge, the process will kick off and deploy the application listed in the manifest to the environment aligned to the branch you're merging into. ![dev deployment](/resources/dev_deploy.png) 
+4. Upon PR merge, the process will kick off and deploy the application listed in the manifest to the environment aligned to the branch you're merging into. 
+   * Dev deployment: ![dev deployment](/resources/dev_deploy.png) 
+   * Staging deployment: ![staging deployment](/resources/staging_deploy.png)
+   * Production deployment: ![production deployment](/resources/production_deploy.png) 
 
 ### Summary/Conclusion
 We will always need a way to be certain which applications are deployed in which environments/regions.  It doesn't matter if you create your environments dynamically, run them in Kubernetes, or just deploy to the same static environments with each release. 
